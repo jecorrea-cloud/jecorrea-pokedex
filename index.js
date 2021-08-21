@@ -1,10 +1,13 @@
-const pokeCard = document.querySelector('[data-poke-card]');
-const pokeName = document.querySelector('[data-poke-name]');
-const pokeImg = document.querySelector('[data-poke-img]');
-const pokeImgContainer = document.querySelector('[data-poke-img-container]');
-const pokeId = document.querySelector('[data-poke-id]');
-const pokeTypes = document.querySelector('[data-poke-types]');
-const pokeStats = document.querySelector('[data-poke-stats]');
+//Selecting Card's components
+const pokeCard = document.querySelector('[card]');
+const pokeId = document.querySelector('[id]');
+const pokeImgContainer = document.querySelector('[img-container]');
+const pokeImg = document.querySelector('[img]');
+const pokeName = document.querySelector('[poke-name]');
+const pokeTypes = document.querySelector('[types]');
+const pokeWeight = document.querySelector('[weight]');
+const pokeHeight = document.querySelector('[height]');
+const pokeStats = document.querySelector('[stats]');
 
 //Searchbar's function to access the Pokemon API
 const searchPokemon = (event) =>{
@@ -12,14 +15,24 @@ const searchPokemon = (event) =>{
     const { value } = event.target.pokemon;
     fetch(`https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`)
     .then(data => data.json())
+    // Calling function to render Pokémon
     .then(response => renderPokemonData(response))
+    // Calling function for the invalid input
     .catch(err => renderNotFound())
 }
 
-let renderPokemonData = () =>{
-
+let renderPokemonData = (data) =>{
+    console.log(data)
+    const sprite = data.sprites.front_default
+    // const { stats, types } = data;
+    
+    pokeId.textContent = `Nº ${data.id}`
+    pokeImg.setAttribute('src', sprite);     
+    pokeName.textContent = data.name;
+    
 }
 
+//Function to render error
 const renderNotFound = () => {
     pokeName.textContent = 'Not found... Who\'s that Pokemon?';
     pokeImg.setAttribute('src', 'pokeMissing.png');
