@@ -1,0 +1,13 @@
+.poke-card {
+    position: relative;
+    height: fit-content;
+    font-family: 'Press Start 2P';
+    max-width: 300px;
+    border-radius: 4px;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: #FFF;
+    border: 1px solid black;
+}
