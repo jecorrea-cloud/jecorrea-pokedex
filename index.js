@@ -36,8 +36,10 @@ const searchPokemon = (event) => {
   const { value } = event.target.pokemon;
   fetch(`https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`)
     .then((data) => data.json())
+
     // Calling function to render Pokémon
     .then((response) => renderPokemonData(response))
+    
     // Calling function for the invalid input
     .catch((err) => renderNotFound());
 };
@@ -62,8 +64,8 @@ const setCardColor = (types) => {
     console.log("setting color based on types")
   const colorOne = colors[types[0].type.name];
   const colorTwo = types[1] ? colors[types[1].type.name] : colors.default;
-  pokeImg.style.background = `radial-gradient(${colorTwo} 33%, ${colorOne} 33%)`;
-  pokeImg.style.backgroundSize = "2.5px 2.5px";
+  pokeImg.style.background = `radial-gradient(${colorTwo}, ${colorOne})`;
+  pokeImg.style.backgroundSize = "3px 3px";
 };
 
 const renderPokemonTypes = (types) => {
@@ -79,10 +81,27 @@ const renderPokemonTypes = (types) => {
 
 const renderPokemonStats = (stats) => {
     console.log("doing stats")
+
+    pokeStats.innerHTML = "";
+    stats.forEach((stat) => {
+      const statElement = document.createElement("div");
+      const statName = document.createElement("div");
+      const statValue = document.createElement("div");
+
+      statName.textContent = stat.stat.name;
+      statValue.textContent = stat.base_stat;
+
+      statElement.appendChild(statName);
+      statElement.appendChild(statValue);
+
+      pokeStats.appendChild(statElement);
+    })
 }
 
 //Function to render error
 const renderNotFound = () => {
+  console.log("Bad input!")
+
   pokeId.textContent = "";
   pokeName.textContent = "?... Not found... Who's that Pokemon?";
   pokeImg.setAttribute("src", "pokeMissing.png");
