@@ -12,9 +12,11 @@ const pokeStats = document.querySelector("[stats]");
 // Dictionary for colors based on types
 const colors = {
   bug: "#90ee92",
-  default: "#2A1A1F",
+  dark: "#2A1A1F",
+  default: "#ffffff",
   dragon: "#db5572",
   electric: "#f3da4e",
+  fairy: "#fca9c5",
   fighting: "#353434",
   fire: "#f33224",
   flying: "#69e4bf",
@@ -24,7 +26,7 @@ const colors = {
   ice: "#8fe1fc",
   normal: "#9c868a",
   poison: "#855667",
-  psychic: "#fca9c5",
+  psychic: "#e24996",
   rock: "#858085",
   steel: "#148c9c",
   water: "#0598c9",
@@ -39,7 +41,7 @@ const searchPokemon = (event) => {
 
     // Calling function to render Pokémon
     .then((response) => renderPokemonData(response))
-    
+
     // Calling function for the invalid input
     .catch((err) => renderNotFound());
 };
@@ -65,7 +67,7 @@ const setCardColor = (types) => {
   const colorOne = colors[types[0].type.name];
   const colorTwo = types[1] ? colors[types[1].type.name] : colors.default;
   pokeImg.style.background = `radial-gradient(${colorTwo}, ${colorOne})`;
-  pokeImg.style.backgroundSize = "3px 3px";
+  // pokeImg.style.backgroundSize = "3px 3px";
 };
 
 const renderPokemonTypes = (types) => {
@@ -103,7 +105,7 @@ const renderNotFound = () => {
   console.log("Bad input!")
 
   pokeId.textContent = "";
-  pokeName.textContent = "?... Not found... Who's that Pokemon?";
+  pokeName.textContent = "?... Not found... Who's that Pokémon?";
   pokeImg.setAttribute("src", "pokeMissing.png");
   pokeImg.style.background = "#fff";
   pokeTypes.innerHTML = "";
