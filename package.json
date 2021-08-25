@@ -4,7 +4,7 @@
   "description": "A Pokédex that uses the Pokémon API.",
   "main": "index.js",
   "scripts": {
-    "test": "open http://localhost:3000 && node server.js"
+    "test": "open http://localhost:3001 && node server.js"
   },
   "repository": {
     "type": "git",

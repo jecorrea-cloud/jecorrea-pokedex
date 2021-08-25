@@ -47,7 +47,7 @@ const searchPokemon = (event) => {
 };
 
 const renderPokemonData = (data) => {
-  console.log(data);
+  // console.log(data);
   const sprite = data.sprites.front_default;
   const { stats, types } = data;
 
@@ -71,7 +71,7 @@ const setCardColor = (types) => {
 };
 
 const renderPokemonTypes = (types) => {
-    console.log("displaying types")
+    // console.log("displaying types")
   pokeTypes.innerHTML = "";
   types.forEach((type) => {
     const typeTextElement = document.createElement("div");
@@ -82,7 +82,7 @@ const renderPokemonTypes = (types) => {
 };
 
 const renderPokemonStats = (stats) => {
-    console.log("doing stats")
+    // console.log("doing stats")
 
     pokeStats.innerHTML = "";
     stats.forEach((stat) => {
@@ -102,7 +102,7 @@ const renderPokemonStats = (stats) => {
 
 //Function to render error
 const renderNotFound = () => {
-  console.log("Bad input!")
+  // console.log("Bad input!")
 
   pokeId.textContent = "";
   pokeName.textContent = "?... Not found... Who's that Pokémon?";
