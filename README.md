@@ -1,2 +1,8 @@
 # jecorrea-pokedex
-A searcher for Pokemons using the Pokemon API
+A Pokédex that uses the Pokémon API.
+
+Technologies used:
+
+-HTML
+-CSS
+-JavaScript
