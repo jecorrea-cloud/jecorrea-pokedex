@@ -1,0 +1,23 @@
+{
+  "name": "jecorrea-pokedex",
+  "version": "1.0.0",
+  "description": "A Pokédex that uses the Pokémon API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jecorrea-cloud/jecorrea-pokedex.git"
+  },
+  "keywords": [
+    "pokedex",
+    "pokemon"
+  ],
+  "author": "Joaquin Correa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jecorrea-cloud/jecorrea-pokedex/issues"
+  },
+  "homepage": "https://github.com/jecorrea-cloud/jecorrea-pokedex#readme"
+}
