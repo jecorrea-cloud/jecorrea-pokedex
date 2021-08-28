@@ -15,14 +15,15 @@ input {
 
 .poke-card::before {
     content: '';
-    background: radial-gradient(black 33%, transparent 33%);
+    background: conic-gradient(black, black);
     background-size: 3px 3px;
     border-radius: 10px;
     height: 100%;
     width: 100%;
     position: absolute;
-    left: 10px;
-    top: 10px;
+    right: 7px;
+    /* left: 10px; */
+    top: 7px;
     z-index: -1;
 }
 
