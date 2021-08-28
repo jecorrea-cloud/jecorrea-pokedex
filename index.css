@@ -73,6 +73,6 @@ p{
 body{
     background-image: url(./background.png);
     background-size: cover;
-    min-height: 100%;
+    min-height: 150%;
     width:100vw;
   }
